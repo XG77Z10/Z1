@@ -1,2 +1,2 @@
-# Z1
-Example Z1 Send CURL sending Mail
+# XG77Z10
+Example XG77Z10 Send CURL sending Mail

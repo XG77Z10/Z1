@@ -12,7 +12,7 @@ foreach ($required as $key => $value) {
 if(count($count) != count($_POST) || count($required) != count($count)){
 	$status =  json_encode(array(
 		'status'  => false,
-		'message' => 'ada data yang kosong'
+		'message' => 'there is empty data'
 	));
 	die($status);
 }
@@ -29,13 +29,13 @@ if( mail($_POST['to'], $_POST['subject'], base64_decode($_POST['letter']) , impl
 	$status =  json_encode(array(
 		'subject' => $_POST['subject'],
 		'status'  => true,
-		'message' => 'Sukses',
+		'message' => 'Success',
 		'note' 	  => $_POST['note'],
 	));
 }else{
 	$status =  json_encode(array(
 		'status'  => false,
-		'message' => 'Gagal',
+		'message' => 'Failed',
 		'note' 	  => $_POST['note'],
 	));
 }
@@ -44,7 +44,7 @@ if($status){
 }else{
 	$status =  json_encode(array(
 		'status'  => false,
-		'message' => 'Kesalahan Server'
+		'message' => 'Server Error'
 	));
 	die($status);
 }
